@@ -1,0 +1,114 @@
+body{
+	font-family: 'Harmattan', sans-serif;
+	font-size: 20px;
+}
+
+
+.container-fluid .row {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.column {
+	/*width: 100%;*/
+	height: 100%;
+	position: relative;
+	/*float: left;*/
+}
+
+.columnleft {
+	background-color: #F3F3F3;
+}
+
+.columnright {
+	/*background-color: #F3F3F3;*/
+}
+
+.columncenter{
+	-webkit-box-shadow: 0px -1px 19px 3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px -1px 19px 3px rgba(0,0,0,0.75);
+	box-shadow: 0px -1px 19px 3px rgba(0,0,0,0.75);
+}
+
+.header {
+	width: 100%;
+	height: 15%;
+	background: #f1f1f1;
+	position: absolute;
+	left: 0;
+	padding: 15px;
+	border-bottom: 1px solid #e0d7d7;
+}
+
+.header h1 {
+	font-size: 75px;
+	color:#2252af;
+}
+
+.content {
+	margin-top: 11%;
+}
+
+
+/*
+	Shortcuts Css
+	+ Don't add more Css below this, this is the end of the file
+	+ No agregue mas Css debajo de estos, este es el final del archivo
+*/
+/* texts */
+.text-left		{text-align     : left;}
+.text-right		{text-align     : right;}
+.text-center	{text-align     : center;}
+.text-justify	{text-align     : justify;}
+.text-top		{vertical-align : text-top;}
+.text-middle	{vertical-align : middle;}
+.text-bottom	{vertical-align : text-bottom;}
+.text-none		{text-decoration: none;}
+.underline		{text-decoration: underline;}
+/* colors */
+.white {color:#FFFFFF;}
+.black {color:#000000;}
+/* text transform */
+.upper 	{text-transform : uppercase;}
+.lower 	{text-transform : lowercase;}
+.capita {text-transform : capitalize;}
+.strike {text-decoration: line-through;}
+/* fonts */
+.italic 	{font-style : italic;}
+.normal 	{font-style : normal ;}
+.bold		{font-weight: bold;}
+.line-small {line-height: 12px;}
+/* font-sizes */
+.font-giant {font-size:	16px;}
+.font-big	{font-size:	14px;}
+.font-normal{font-size:	12px;}
+.font-small {font-size:	10px;}
+.font-tiny 	{font-size:	8px;}
+/* divs */
+.left		{float      : left;}
+.right  	{float      : right;}
+.clear  	{clear      : both;}
+.hide		{display    : none;}
+.inline 	{display    : inline;}
+.block  	{display    : block;}
+.center 	{margin-left: auto;margin-right:auto;}
+.absolute 	{position   : absolute;}
+.relative 	{position   : relative;}
+.invisible 	{visibility : hidden;}
+.overflow 	{overflow   : hidden;}
+/* mouse */
+.pointer {cursor:pointer;}
+/* verticals */
+.vertical-bottom	{vertical-align: bottom;}
+.vertical-top		{vertical-align: top;}
+.vertical-middle	{vertical-align: middle;}
+/* ul and li */
+.list-none		{list-style-type    : none;}
+.list-inside	{list-style-position: inside;}
+.list-outside	{list-style-position: outside;}
+/* reset */
+.reset-padding 		{padding        : 0;}
+.reset-margin  		{margin         : 0;}
+.reset-text    		{font-style     : normal;font-size:12px;font-weight:normal;text-decoration: none;}
+.decoration-none 	{text-decoration: none;}
