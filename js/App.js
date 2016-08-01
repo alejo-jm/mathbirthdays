@@ -36,7 +36,11 @@
 			'js/App/controllers/AppController.js',
 		],
 		[
-			'js/App/controllers/HomeController.js'
+			'js/App/controllers/HomeController.js',
+			'js/App/controllers/MonthController.js',
+			'js/App/controllers/DayController.js',
+			'js/App/controllers/YearController.js',
+			'js/App/controllers/CalculateController.js'
 		],
 		[
 			'js/Routes.js'

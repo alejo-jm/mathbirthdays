@@ -1,0 +1,22 @@
+{
+  "name": "js",
+  "homepage": "https://github.com/alejo-jm/mathbirthdays",
+  "authors": [
+    "Alejo Jm <alejojm@gmail.com>"
+  ],
+  "description": "mathbirthdays",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "requirejs": "^2.2.0"
+  }
+}

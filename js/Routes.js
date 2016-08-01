@@ -22,6 +22,22 @@ angular.module('MathDays', [
 			controller : HomeController,
 			templateUrl: 'home.html',
 		})
+		.when('/mathbirthday/month', {
+			controller : MonthController,
+			templateUrl: 'birthmonth.html',
+		})
+		.when('/mathbirthday/day', {
+			controller : DayController,
+			templateUrl: 'birthday.html',
+		})
+		.when('/mathbirthday/year', {
+			controller : YearController,
+			templateUrl: 'birthyear.html',
+		})
+		.when('/mathbirthday', {
+			controller : CalculateController,
+			templateUrl: 'mathbirthday.html',
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
