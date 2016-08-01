@@ -11,4 +11,11 @@ function HomeController($scope, $location, $timeout, $routeParams){
 	 */
 	var root = $scope.$root;
 
+	/**
+	 * we are ready activate the animations
+	 */
+	$timeout(function(){
+		$('.wrapviews').addClass('view-animated');
+	});
+
 }

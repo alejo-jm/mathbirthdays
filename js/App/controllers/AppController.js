@@ -1,4 +1,3 @@
-
 /**
  * AppController main scope for the app
  * @access public
@@ -6,13 +5,23 @@
  */
 angular.module('MathControllers', []).controller('AppController', AppController);
 
-AppController.$inject = ['$scope', '$rootScope', '$location', '$timeout', '$cookieStore', '$route'];
-function AppController($scope, $rootScope, $location, $timeout, $cookieStore, $route){
-	/**
-	 * shortcur to root scope
-	 * @type {scope}
-	 */
-	var root = $scope.root;
+AppController.$inject = ['$scope', '$rootScope', '$location', '$timeout', '$route', '$window'];
+function AppController($scope, $rootScope, $location, $timeout, $route, $window) {
+
+	//debug classNames
+	// setInterval(function(){
+	// 	console.log($('.content').attr('class'));
+	// });
+	$scope.$on('$locationChangeStart', function(event, newUrl, oldUrl) {
+		console.log('locationChangeStart', newUrl, oldUrl);
+	});
+
+	// $scope.$on('$locationChangeSuccess', function() {
+	// 	$scope.currentpath = $location.path();
+	// 	console.log($scope.currentpath);
+
+	// });
+
 
 
 }

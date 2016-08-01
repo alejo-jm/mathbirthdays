@@ -29,7 +29,7 @@
 			'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js',
 			'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-touch.min.js',
 			'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js',
-			'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.min.js',
+			'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js',
 		],
 		[	!Config.debug ? path+'/js/bot.app.min.js' : ''],
 		[

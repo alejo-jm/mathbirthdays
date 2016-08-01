@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="js/bower_components/bootstrap/dist/css/bootstrap-theme.css">
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/animations.css">
 
 	<script type="text/javascript" src="js/Config.js" async defer></script>
 	<script type="text/javascript" data-main="js/App.js" src="js/bower_components/requirejs/require.js" async defer></script>
@@ -28,8 +29,10 @@
 				<div class="header">
 					<h1><a href="#/">Mathbirthdays</a></h1>
 				</div>
-				<div ng-view class="content">
+				<div class="wrapviews">
+					<div ng-view class="content">
 
+					</div>
 				</div>
 			</div>
 			<div class="column columnright col-xs-1 col-md-1">

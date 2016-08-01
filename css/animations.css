@@ -1,0 +1,46 @@
+
+.ng-enter { display:none; }
+.ng-enter.ng-enter-active { display:block; }
+
+.view-animated .ng-enter {
+	z-index: 2;
+	-webkit-animation-name: pushEnterView;
+			animation-name: pushEnterView;
+	-webkit-animation-duration: 0.4s;
+			animation-duration: 0.4s;
+}
+
+
+@-webkit-keyframes pushEnterView {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    visibility: visible;
+ 	-webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+    		animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+ 	-webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+    		animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+  }
+}
+
+@keyframes pushEnterView {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    visibility: visible;
+ 	-webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+    		animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+ 	-webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+    		animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+  }
+}

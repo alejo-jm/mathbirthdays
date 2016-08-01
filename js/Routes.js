@@ -5,7 +5,7 @@ angular.module('MathDays', [
 	'ngRoute',
 	'ngResource',
 	'ngTouch',
-	'ngCookies',
+	'ngAnimate',
 	'MathControllers',
 	// 'BotServices',
 	// 'appHttp'
