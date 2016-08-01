@@ -27,7 +27,7 @@ function AppController($scope, $rootScope, $location, $timeout, $route, $window)
 	// 	console.log($scope.currentpath);
 
 	// });
-
+	//
 
 
 }

@@ -11,10 +11,11 @@ function DayController($scope, $location, $timeout, $routeParams){
 	var root = $scope.$root;
 
 	/**
-	 * setup day
+	 * setup month and day
 	 * @type {string}
 	 */
-	$scope.day = root.data.day;
+	$scope.month = $routeParams.month;
+	$scope.day   = $routeParams.day;
 
 	/**
 	 * submit the form get the day and validate
@@ -24,8 +25,7 @@ function DayController($scope, $location, $timeout, $routeParams){
 		if(!$scope.birthday.$valid)
 			return $scope.birthday.$setDirty();
 
-		root.data.day = $scope.day;
-		$location.path('/mathbirthday/year');
+		$location.path('/month/'+$routeParams.month+'/day/'+$scope.day+'/year');
 	};
 
 }

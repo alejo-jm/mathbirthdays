@@ -1,0 +1,19 @@
+/**
+ *
+ * columns and more only desktop
+ *
+ **/
+@media only screen and (min-width : 970px) {
+	.column {
+		height: 100%;
+	}
+	.columncenter {
+		-webkit-box-shadow: 0px -1px 19px 3px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px -1px 19px 3px rgba(0,0,0,0.75);
+		box-shadow: 0px -1px 19px 3px rgba(0,0,0,0.75);
+	}
+
+	.view .btn-primary {
+ 		margin-left: 20px;
+ 	}
+}

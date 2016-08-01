@@ -1,8 +1,14 @@
 <div class="view">
 	<h2>This is your math mathbirthday</h2>
 	<div class="result">
-		<p>{{mathbirthday}}</p>
+		<div class="thinking">
+			<div class="text left">Calculating ...</div>
+			<div class="signal left"></div>
+		</div>
+		<p class="clear">{{mathbirthday}}</p>
+		<p class="clear">Your next math birthday is your {{powX}} day old birthday on {{dateInFuture}} date</p>
+
 	</div>
 	<br>
-	<a class="btn btn-primary" href="#/mathbirthday/month">Start again</a>
+	<a class="btn btn-primary hide" href="#/mathbirthday/month">Start again</a>
 </div>

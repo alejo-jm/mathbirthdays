@@ -14,7 +14,9 @@ function YearController($scope, $location, $timeout, $routeParams){
 	 * setup day
 	 * @type {string}
 	 */
-	$scope.year = root.data.year;
+	$scope.month = $routeParams.month;
+	$scope.day   = $routeParams.day;
+
 
 	/**
 	 * submit the form get the day and validate
@@ -24,8 +26,7 @@ function YearController($scope, $location, $timeout, $routeParams){
 		if(!$scope.birthday.$valid)
 			return $scope.birthday.$setDirty();
 
-		root.data.year = $scope.year;
-		$location.path('/mathbirthday');
+		$location.path('/month/'+$routeParams.month+'/day/'+$routeParams.day+'/year/'+$scope.year+'/result');
 	};
 
 }

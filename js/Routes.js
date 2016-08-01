@@ -22,19 +22,19 @@ angular.module('MathDays', [
 			controller : HomeController,
 			templateUrl: 'home.html',
 		})
-		.when('/mathbirthday/month', {
+		.when('/month/:month?', {
 			controller : MonthController,
 			templateUrl: 'birthmonth.html',
 		})
-		.when('/mathbirthday/day', {
+		.when('/month/:month/day/:day?', {
 			controller : DayController,
 			templateUrl: 'birthday.html',
 		})
-		.when('/mathbirthday/year', {
+		.when('/month/:month/day/:day/year', {
 			controller : YearController,
 			templateUrl: 'birthyear.html',
 		})
-		.when('/mathbirthday', {
+		.when('/month/:month/day/:day/year/:year/result', {
 			controller : CalculateController,
 			templateUrl: 'mathbirthday.html',
 		})

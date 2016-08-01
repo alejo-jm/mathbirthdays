@@ -14,7 +14,7 @@ function MonthController($scope, $location, $timeout, $routeParams){
 	 * setup month
 	 * @type {string}
 	 */
-	$scope.month = root.data.month;
+	$scope.month = $routeParams.month;
 
 	/**
 	 * submit the form get the month and validate
@@ -24,8 +24,7 @@ function MonthController($scope, $location, $timeout, $routeParams){
 		if(!$scope.birthday.$valid)
 			return $scope.birthday.$setDirty();
 
-		root.data.month = $scope.month;
-		$location.path('/mathbirthday/day');
+		$location.path('/month/'+$scope.month+'/day');
 	};
 
 }
