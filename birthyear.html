@@ -1,8 +1,20 @@
 <div class="view">
 	<h2>¿In which year is your birthday?</h2>
-	<form action="" method="post" accept-charset="utf-8">
-		<input class="form-control" type="text" name="" value="" placeholder="YYYY">
+	<form name="birthday" action="" method="post" accept-charset="utf-8" novalidate ng-submit="submit($event)">
+		<p>
+			<input autocomplete="off" required class="form-control" type="text" name="year" value="" placeholder="YYYY" ng-model="year" ng-pattern="/^(19[789]\d|20[01]\d)$/">
+			<div class="error"><span class="glyphicon glyphicon-exclamation-sign"></span> Invalid year of Birth</div>
+		</p>
+		<br>
+		<p>
+			<a class="btn btn-info" href="#/mathbirthday/day">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				Back
+			</a>
+			<button type="submit" class="btn btn-primary">
+				Continue
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</button>
+		</p>
 	</form>
-	<br>
-	<a class="btn btn-primary" href="#/">Continue</a>
 </div>

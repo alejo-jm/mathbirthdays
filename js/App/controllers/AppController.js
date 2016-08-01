@@ -16,6 +16,12 @@ function AppController($scope, $rootScope, $location, $timeout, $route, $window)
 		console.log('locationChangeStart', newUrl, oldUrl);
 	});
 
+	/**
+	 * here child controller save the data
+	 * @type {Object}
+	 */
+	$rootScope.data = {};
+
 	// $scope.$on('$locationChangeSuccess', function() {
 	// 	$scope.currentpath = $location.path();
 	// 	console.log($scope.currentpath);

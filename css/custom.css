@@ -1,0 +1,38 @@
+/**
+ *
+ * override boostrap btn
+ *
+ **/
+ .btn {
+ 	border-radius:0;
+ 	border: none;
+ 	font-family: inherit;
+ 	font-size: 30px;
+ }
+
+
+.view .btn-info {
+	min-width: 150px;
+}
+
+.btn-primary, .btn-info {
+ 	background-image: none;
+}
+
+.btn .glyphicon{
+	font-size: 24px;
+	top:5px;
+ }
+
+ .view .btn-primary {
+ 	margin-left: 20px;
+ }
+
+ /**
+ *
+ * override form-control
+ *
+ **/
+.form-control {
+	border-radius:0;
+}
