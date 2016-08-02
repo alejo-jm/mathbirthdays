@@ -14,9 +14,9 @@ function YearController($scope, $location, $timeout, $routeParams){
 	 * setup day
 	 * @type {string}
 	 */
-	$scope.month = Number($routeParams.month);
-	$scope.day   = Number($routeParams.day);
-	$scope.year  = Number($routeParams.year);
+	$scope.month = $routeParams.month ? Number($routeParams.month): null;
+	$scope.day   = $routeParams.day   ? Number($routeParams.day)  : null;
+	$scope.year  = $routeParams.year  ? Number($routeParams.year) : null;
 
 	/**
 	 * activate back navigation only works in mobile

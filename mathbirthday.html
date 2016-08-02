@@ -1,6 +1,6 @@
 <div class="view">
 	<h2>This is your math mathbirthday</h2>
-	<div class="result">
+	<div class="result" ng-show="!invalidDate">
 		<div class="thinking">
 			<div class="text left">Calculating ...</div>
 			<div class="signal left"></div>
@@ -12,8 +12,15 @@
 				<span class="glyphicon glyphicon-chevron-left"></span>
 				Back
 			</a>
-
 		</div>
+	</div>
+	<div ng-show="invalidDate" class="text-danger">
+		<div class="error"><span class="glyphicon glyphicon-exclamation-sign"></span> Something wrong, try again</div>
+		<br>
+		<a class="btn btn-primary no-mobile" href="#/">
+			Start again &nbsp;
+			<span class="glyphicon glyphicon-home"></span>
+		</a>
 	</div>
 	<br>
 	<a class="btn btn-primary hide" href="#/mathbirthday/month">Start again</a>

@@ -14,7 +14,7 @@ function MonthController($scope, $location, $timeout, $routeParams){
 	 * setup month
 	 * @type {string}
 	 */
-	$scope.month = Number($routeParams.month);
+	$scope.month = $routeParams.month ? Number($routeParams.month) : null;
 
 	/**
 	 * activate back navigation only works in mobile

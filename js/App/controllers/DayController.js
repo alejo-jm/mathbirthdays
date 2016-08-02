@@ -14,8 +14,8 @@ function DayController($scope, $location, $timeout, $routeParams){
 	 * setup month and day
 	 * @type {string}
 	 */
-	$scope.month = Number($routeParams.month);
-	$scope.day   = Number($routeParams.day);
+	$scope.month = $routeParams.month ? Number($routeParams.month): null;
+	$scope.day   = $routeParams.day   ? Number($routeParams.day)  : null;
 
 	/**
 	 * activate back navigation only works in mobile

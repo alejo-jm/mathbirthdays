@@ -49,6 +49,20 @@ function CalculateController($scope, $location, $timeout, $routeParams){
 	$scope.invalidDate = false;
 
 	/**
+	 * validate user input
+	 * @return {Boolean}
+	 */
+	function isValidDates () {
+		var date = new Date(userBirth.year, userBirth.month, userBirth.day);
+		if ( date.getTime && isNaN( date.getTime() ) ){
+			$scope.invalidDate = true;
+			return false;
+		}
+		$scope.invalidDate = false;
+		return true;
+	}
+
+	/**
 	 * get if the birthday for this year already happend
 	 * @return {boolean}
 	 */
@@ -64,6 +78,9 @@ function CalculateController($scope, $location, $timeout, $routeParams){
 	 * @return {void}
 	 */
 	function calculate (moment) {
+		if(!isValidDates())
+			return;
+
 		if(!moment(userBirth.year+userBirth.month+userBirth.day).isValid("YYYYMD")){
 			$scope.invalidDate = true;
 			return $scope.$apply();
