@@ -11,12 +11,28 @@ function YearController($scope, $location, $timeout, $routeParams){
 	var root = $scope.$root;
 
 	/**
+	 * timeout promise function
+	 * @type {Promise}
+	 */
+	var promise = $timeout(function(){
+		$('input').get(0).focus();
+	},500);
+
+	/**
+	 * cancel promise on destroy
+	 */
+    $scope.$on("$destroy", function() {
+		$timeout.cancel(promise);
+    });
+
+	/**
 	 * setup day
 	 * @type {string}
 	 */
 	$scope.month = $routeParams.month ? Number($routeParams.month): null;
 	$scope.day   = $routeParams.day   ? Number($routeParams.day)  : null;
 	$scope.year  = $routeParams.year  ? Number($routeParams.year) : null;
+	$scope.currentYear = new Date().getFullYear();
 
 	/**
 	 * activate back navigation only works in mobile

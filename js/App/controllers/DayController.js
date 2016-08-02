@@ -11,6 +11,23 @@ function DayController($scope, $location, $timeout, $routeParams){
 	var root = $scope.$root;
 
 	/**
+	 * timeout promise function
+	 * @type {Promise}
+	 */
+	var promise = $timeout(function(){
+		if($('input').get(0))
+			$('input').get(0).focus();
+	},500);
+
+	/**
+	 * cancel promise on destroy
+	 */
+    $scope.$on("$destroy", function() {
+    	if(promise)
+			$timeout.cancel(promise);
+    });
+
+	/**
 	 * setup month and day
 	 * @type {string}
 	 */

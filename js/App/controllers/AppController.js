@@ -7,12 +7,11 @@ angular.module('MathControllers', []).controller('AppController', AppController)
 
 AppController.$inject = ['$scope', '$rootScope', '$location', '$timeout', '$route', '$window'];
 function AppController($scope, $rootScope, $location, $timeout, $route, $window) {
-
 	//debug classNames
 	// setInterval(function(){
 	// 	console.log($('.content').attr('class'));
 	// });
-	$scope.uno = 1;
+
 	/**
 	 * setup base class for animations can be forward or backward
 	 */
@@ -34,19 +33,5 @@ function AppController($scope, $rootScope, $location, $timeout, $route, $window)
 		$rootScope.$watch('backNavigation', function(value){
 			$('.navigation .nolink')[value ? 'removeClass' : 'addClass']('hide');
 		});
-
-	/**
-	 * here child controller save the data
-	 * @type {Object}
-	 */
-	$rootScope.data = {};
-
-	// $scope.$on('$locationChangeSuccess', function() {
-	// 	$scope.currentpath = $location.path();
-	// 	console.log($scope.currentpath);
-
-	// });
-	//
-
 
 }
