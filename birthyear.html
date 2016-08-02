@@ -2,7 +2,7 @@
 	<h2>¿In which year is your birthday?</h2>
 	<form name="birthday" action="" method="post" accept-charset="utf-8" novalidate ng-submit="submit($event)">
 		<p>
-			<input autocomplete="off" required class="form-control" type="number" name="year" value="" placeholder="YYYY" ng-model="year" pattern="[0-9]*" ng-pattern="/^(19[789]\d|20[01]\d)$/">
+			<input tabindex="1" autocomplete="off" required class="form-control" type="number" name="year" value="" placeholder="YYYY" ng-model="year" pattern="[0-9]*" ng-pattern="/^(19[789]\d|20[01]\d)$/">
 			<div class="error"><span class="glyphicon glyphicon-exclamation-sign"></span> Invalid year of Birth</div>
 		</p>
 		<br>

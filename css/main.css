@@ -236,8 +236,11 @@ form .error .glyphicon {
 	padding-left: 10px;
 }
 
-
-
+.jasmine_html-reporter{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
 
 /*
 	Shortcuts Css

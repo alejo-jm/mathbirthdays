@@ -17,6 +17,15 @@ function CalculateController($scope, $location, $timeout, $routeParams){
 	var month = $routeParams.month;
 	var day   = $routeParams.day;
 	var year  = $routeParams.year;
+	$scope.params = $routeParams;
+
+	/**
+	 * activate back navigation only works in mobile
+	 * @type {string}
+	 */
+	$timeout(function(){
+		root.backNavigation = '#/month/'+month+'/day/'+day+'/year/'+year;
+	});
 
 	/**
 	 * include momentjs
@@ -40,6 +49,16 @@ function CalculateController($scope, $location, $timeout, $routeParams){
 	$scope.invalidDate = false;
 
 	/**
+	 * get if the birthday for this year already happend
+	 * @return {boolean}
+	 */
+	function compareBirthDates () {
+		var today = new Date();
+		var thisYearBirthday = new Date(new Date().getFullYear(), month, day);
+		return today >= thisYearBirthday;
+	}
+
+	/**
 	 * calcute the next birday and make a pow for the age of the user
 	 * @param  {Function} moment
 	 * @return {void}
@@ -49,14 +68,18 @@ function CalculateController($scope, $location, $timeout, $routeParams){
 			$scope.invalidDate = true;
 			return $scope.$apply();
 		}
-		console.log(userBirth);
+
+		var sumToAge = compareBirthDates() ? 1 : 0;
 		var strAgeDate = moment(userBirth.year+' '+userBirth.month+' '+userBirth.day, "YYYY M D").fromNow();
-		console.log(strAgeDate);
-		var numAgeDate = Number(strAgeDate.replace(/\D+/g, ''));
-		console.log(numAgeDate);
+		var numAgeDate = Number(strAgeDate.replace(/\D+/g, '')) + sumToAge;
 		numAgeDate = !numAgeDate ? 1 : numAgeDate;
 		$scope.powX = Math.pow(10, numAgeDate);
-		$scope.dateInFuture = month+'-'+day+'-'+(new Date().getFullYear() + 1);
+		$scope.dateInFuture = month+'/'+day+'/'+(new Date().getFullYear() + 1);
 		$scope.$apply();
+
+		$timeout(function(){
+			$('.thinking').addClass('hide');
+			$('.result').removeClass('hide');
+		}, 1000);
 	}
 }

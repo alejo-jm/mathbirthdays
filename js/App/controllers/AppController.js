@@ -12,7 +12,7 @@ function AppController($scope, $rootScope, $location, $timeout, $route, $window)
 	// setInterval(function(){
 	// 	console.log($('.content').attr('class'));
 	// });
-
+	$scope.uno = 1;
 	/**
 	 * setup base class for animations can be forward or backward
 	 */

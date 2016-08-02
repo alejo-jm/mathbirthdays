@@ -5,9 +5,15 @@
 			<div class="text left">Calculating ...</div>
 			<div class="signal left"></div>
 		</div>
-		<p class="clear">{{mathbirthday}}</p>
-		<p class="clear">Your next math birthday is your {{powX}} day old birthday on {{dateInFuture}} date</p>
+		<div class="result hide">
+			<p class="clear">{{mathbirthday}}</p>
+			<p class="clear">Your next math birthday is your {{powX}} days old birthday on date {{dateInFuture}} </p>
+			<a class="btn btn-info no-mobile" href="#/month/{{params.month}}/day/{{params.day}}/year/{{params.year}}">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				Back
+			</a>
 
+		</div>
 	</div>
 	<br>
 	<a class="btn btn-primary hide" href="#/mathbirthday/month">Start again</a>

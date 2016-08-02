@@ -19,6 +19,7 @@
     "bootstrap": "^3.3.7",
     "requirejs": "^2.2.0",
     "moment": "^2.14.1",
-    "isMobile": "^0.4.0"
+    "isMobile": "^0.4.0",
+    "jasmine-core": "jasmine#^2.4.1"
   }
 }

@@ -1,5 +1,5 @@
 /**
- * anngular routes
+ * angular routes
  */
 angular.module('MathDays', [
 	'ngRoute',
@@ -7,14 +7,6 @@ angular.module('MathDays', [
 	'ngTouch',
 	'ngAnimate',
 	'MathControllers',
-	// 'BotServices',
-	// 'appHttp'
-	// 'ui.bootstrap',
-	// 'angularFileUpload',
-	// 'appHttp',
-	// 'pokerControllers',
-	// 'pokerServices',
-	// 'pokerDirectives'
 ])
 .config(['$routeProvider',  function ($routeProvider) {
 	$routeProvider
@@ -30,7 +22,7 @@ angular.module('MathDays', [
 			controller : DayController,
 			templateUrl: 'birthday.html',
 		})
-		.when('/month/:month/day/:day/year', {
+		.when('/month/:month/day/:day/year/:year?', {
 			controller : YearController,
 			templateUrl: 'birthyear.html',
 		})

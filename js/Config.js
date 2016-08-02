@@ -9,4 +9,4 @@ Config  = {};
  *   * [Development true | production false ]
  *    * @type {Boolean}
  *     */
-Config.debug = true;
+Config.debug = false;
