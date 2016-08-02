@@ -24,20 +24,44 @@
 	<div class="container-fluid">
 
 		<div class="row">
-			<div class="column columnleft col-md-1">
+			<!-- three columns only for desktop -->
+			<div class="column columnleft no-mobile col-md-1">
 
 			</div>
 			<div class="column columncenter col-xs-12 col-md-10" ng-controller="AppController">
-				<div class="header">
-					<h1><a href="#/">Mathbirthdays</a></h1>
+
+				<!-- header desktop -->
+				<div class="header no-mobile">
+					<h1><a class="nolink" href="#/">Mathbirthdays</a></h1>
 				</div>
+
+				<!-- header mobile -->
+				<div class="header mobile">
+					<div class="row">
+						<div class="col-xs-3 navigation">
+							<a class="nolink hide" href="{{backNavigation}}" ng-show="backNavigation">
+								<span class="glyphicon glyphicon-chevron-left"></span>Back
+							</a>
+						</div>
+						<div class="col-xs-6 title">
+							<a class="nolink" href="#/">Mathbirthdays</a>
+						</div>
+						<div class="col-xs-3 navigation">
+						</div>
+					</div>
+				</div>
+
+				<div class="separation"></div>
+
+				<!--  views for the routes -->
 				<div class="wrapviews">
 					<div ng-view class="content">
 
 					</div>
 				</div>
+
 			</div>
-			<div class="column columnright col-md-1">
+			<div class="column columnright no-mobile col-md-1">
 
 			</div>
 		</div>

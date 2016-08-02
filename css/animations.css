@@ -1,13 +1,41 @@
 
 .ng-enter { display:none; }
 .ng-enter.ng-enter-active { display:block; }
+.content {
+  /*-webkit-backface-visibility: hidden;*/
+}
 
-.view-animated .ng-enter {
+
+.forward .ng-enter {
 	z-index: 2;
 	-webkit-animation-name: pushEnterView;
 			animation-name: pushEnterView;
 	-webkit-animation-duration: 0.4s;
 			animation-duration: 0.4s;
+}
+
+.forward .ng-leave {
+  z-index: 1;
+  -webkit-animation-name: fadeOut;
+      animation-name: fadeOut;
+  -webkit-animation-duration: 0.4s;
+      animation-duration: 0.4s;
+}
+
+.backward .ng-leave {
+  z-index: 1;
+  -webkit-animation-name: popLeaveView;
+      animation-name: popLeaveView;
+  -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+}
+
+.backward .ng-enter {
+  z-index: 2;
+  -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+  -webkit-animation-duration: 0.6s;
+        animation-duration: 0.6s;
 }
 
 
@@ -45,6 +73,105 @@
   }
 }
 
+/*
+ * Animation for push view navigation (forward)
+ */
+@-webkit-keyframes pushLeaveView {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  visibility: visible;
+  }
+}
+
+@keyframes pushLeaveView {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  visibility: visible;
+  }
+}
+/*
+ * Animation for pop view navigation (back)
+ */
+@-webkit-keyframes popLeaveView {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  -webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+        animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  -webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+        animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+    visibility: visible;
+  }
+}
+
+@keyframes popLeaveView {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  -webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+        animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+  visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+
+  -webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+        animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes popEnterView {
+  0% {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  -webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+        animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  -webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+        animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+  }
+}
+
+@keyframes popEnterView {
+  0% {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  -webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+        animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  -webkit-animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+        animation-timing-function: cubic-bezier(.23,1.1,.53,.97);
+  }
+}
 /**
  *
  * src from https://daneden.github.io/animate.css/

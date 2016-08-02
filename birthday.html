@@ -2,12 +2,12 @@
 	<h2>¿In which day is your birthday?</h2>
 	<form name="birthday" action="" method="post" accept-charset="utf-8" novalidate ng-submit="submit($event)">
 		<p>
-			<input autocomplete="off" required class="form-control" type="text" name="day" value="" placeholder="DD" ng-model="day" ng-pattern="/^(0[1-9]|[12]\d|3[01])$/">
+			<input autocomplete="off" required class="form-control" type="number" name="day" value="" placeholder="DD" ng-model="day" pattern="[0-9]*" ng-pattern="/^(0[1-9]|[12]\d|3[01])$/">
 			<div class="error"><span class="glyphicon glyphicon-exclamation-sign"></span> Invalid day of Birth</div>
 		</p>
 		<br>
 		<p>
-			<a class="btn btn-info" href="#/month/{{month}}">
+			<a class="btn btn-info no-mobile" href="#/month/{{month}}">
 				<span class="glyphicon glyphicon-chevron-left"></span>
 				Back
 			</a>

@@ -17,6 +17,14 @@ function MonthController($scope, $location, $timeout, $routeParams){
 	$scope.month = $routeParams.month;
 
 	/**
+	 * activate back navigation only works in mobile
+	 * @type {string}
+	 */
+	$timeout(function(){
+		root.backNavigation = '#/';
+	});
+
+	/**
 	 * submit the form get the month and validate
 	 */
 	$scope.submit = function (event) {

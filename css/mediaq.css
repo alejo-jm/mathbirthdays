@@ -1,6 +1,41 @@
 /**
  *
- * columns and more only desktop
+ * mobile and no-mobile screens
+ * easy hide and show elements
+ *
+ **/
+
+/* desktop */
+@media(min-width: 768px){
+	.mobile{display: none;}
+	.separation {
+		height: 100px;
+	}
+
+}
+
+/* mobile */
+@media(max-width: 767px){
+	.no-mobile{display: none;}
+	.separation {
+		height: 50px;
+	}
+	.column {
+		position: relative;
+    	height: 100%;
+    	width: 100%;
+	}
+	.view .form-control{
+		width: 100%;
+	}
+	form button {
+		min-width: 100%;
+	}
+}
+
+/**
+ *
+ * columns and more only desktop big
  *
  **/
 @media only screen and (min-width : 970px) {

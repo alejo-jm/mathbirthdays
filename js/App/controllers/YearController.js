@@ -17,6 +17,14 @@ function YearController($scope, $location, $timeout, $routeParams){
 	$scope.month = $routeParams.month;
 	$scope.day   = $routeParams.day;
 
+	/**
+	 * activate back navigation only works in mobile
+	 * @type {string}
+	 */
+	$timeout(function(){
+		root.backNavigation = '#/month/'+$scope.month+'/day/'+$scope.day;
+	});
+
 
 	/**
 	 * submit the form get the day and validate

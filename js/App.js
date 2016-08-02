@@ -30,10 +30,11 @@
 			'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-touch.min.js',
 			'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js',
 			'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js',
+			'js/bower_components/isMobile/isMobile.min.js'
 		],
 		[	!Config.debug ? path+'/js/bot.app.min.js' : ''],
 		[
-			'js/App/controllers/AppController.js',
+			'js/App/controllers/AppController.js'
 		],
 		[
 			'js/App/controllers/HomeController.js',

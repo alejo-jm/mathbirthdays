@@ -18,6 +18,14 @@ function DayController($scope, $location, $timeout, $routeParams){
 	$scope.day   = $routeParams.day;
 
 	/**
+	 * activate back navigation only works in mobile
+	 * @type {string}
+	 */
+	$timeout(function(){
+		root.backNavigation = '#/month/'+$routeParams.month;
+	});
+
+	/**
 	 * submit the form get the day and validate
 	 */
 	$scope.submit = function (event) {

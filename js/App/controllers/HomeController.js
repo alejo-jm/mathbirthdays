@@ -12,10 +12,8 @@ function HomeController($scope, $location, $timeout, $routeParams){
 	var root = $scope.$root;
 
 	/**
-	 * we are ready activate the animations
+	 * remove back navigation only for mobile view
 	 */
-	$timeout(function(){
-		$('.wrapviews').addClass('view-animated');
-	});
+	delete root.backNavigation;
 
 }
