@@ -103,7 +103,8 @@ function CalculateController($scope, $location, $timeout, $routeParams){
 		if(!isValidDates())
 			return;
 
-		var yearsOld = moment().diff(moment(year+fixMonth(month)+day, 'YYYYMMDD'), 'years');
+		var newDate  = moment(year+month+day, 'YYYYMMDD').subtract(1, 'months').format('YYYYMMDD');
+		var yearsOld = moment().diff(newDate, 'years');
 		var sumToAge = compareBirthDates() ? 1 : 0;
 		yearsOld = !yearsOld ? 1 : yearsOld + sumToAge;
 		$scope.powX = Math.pow(10, yearsOld);
