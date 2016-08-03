@@ -14,6 +14,17 @@ function CalculateController($scope, $location, $timeout, $routeParams){
 	 * get params from $routeParams
 	 * @type {Object}
 	 */
+	if(!root.validateParams()){
+		$scope.invalidDate = true;
+		return;
+	}
+
+	/**
+	 * momentjs instance
+	 * @type {function}
+	 */
+	var moment = null;
+
 	var month = $routeParams.month;
 	var day   = $routeParams.day;
 	var year  = $routeParams.year;
@@ -67,9 +78,19 @@ function CalculateController($scope, $location, $timeout, $routeParams){
 	 * @return {boolean}
 	 */
 	function compareBirthDates () {
-		var today = new Date();
-		var thisYearBirthday = new Date(new Date().getFullYear(), month, day);
-		return today >= thisYearBirthday;
+		return moment().isSameOrAfter(moment().format('YYYY')+'-'+month+'-'+day);
+	}
+
+	/**
+	 * fix month
+	 * @param  {string} stringMonth
+	 * @return {Number}
+	 */
+	function fixMonth (stringMonth) {
+		var numMonth = Number(stringMonth) - 1;
+		var newMonth = numMonth > 0 ? numMonth : 11;
+		newMonth = newMonth.toString();
+		return newMonth.length == 1 ? '0'+newMonth : newMonth;
 	}
 
 	/**
@@ -77,20 +98,15 @@ function CalculateController($scope, $location, $timeout, $routeParams){
 	 * @param  {Function} moment
 	 * @return {void}
 	 */
-	function calculate (moment) {
+	function calculate (momentLib) {
+		moment = momentLib;
 		if(!isValidDates())
 			return;
 
-		if(!moment(userBirth.year+userBirth.month+userBirth.day).isValid("YYYYMD")){
-			$scope.invalidDate = true;
-			return $scope.$apply();
-		}
-
+		var yearsOld = moment().diff(moment(year+fixMonth(month)+day, 'YYYYMMDD'), 'years');
 		var sumToAge = compareBirthDates() ? 1 : 0;
-		var strAgeDate = moment(userBirth.year+' '+userBirth.month+' '+userBirth.day, "YYYY M D").fromNow();
-		var numAgeDate = Number(strAgeDate.replace(/\D+/g, '')) + sumToAge;
-		numAgeDate = !numAgeDate ? 1 : numAgeDate;
-		$scope.powX = Math.pow(10, numAgeDate);
+		yearsOld = !yearsOld ? 1 : yearsOld + sumToAge;
+		$scope.powX = Math.pow(10, yearsOld);
 		$scope.dateInFuture = month+'/'+day+'/'+(new Date().getFullYear() + 1);
 		$scope.$apply();
 

@@ -11,25 +11,15 @@ function MonthController($scope, $location, $timeout, $routeParams){
 	var root = $scope.$root;
 
 	/**
-	 * timeout promise function
-	 * @type {Promise}
+	 * add focus for input
 	 */
-	var promise = $timeout(function(){
-		$('input').get(0).focus();
-	},500);
+	root.addFocusInScope($scope);
 
 	/**
-	 * cancel promise on destroy
+	 * setup month if valid
 	 */
-    $scope.$on("$destroy", function() {
-		$timeout.cancel(promise);
-    });
-
-	/**
-	 * setup month
-	 * @type {string}
-	 */
-	$scope.month = $routeParams.month ? Number($routeParams.month) : null;
+	if(root.validateParams())
+		$scope.month = Number($routeParams.month);
 
 	/**
 	 * activate back navigation only works in mobile

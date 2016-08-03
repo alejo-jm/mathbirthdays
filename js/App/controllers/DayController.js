@@ -11,28 +11,17 @@ function DayController($scope, $location, $timeout, $routeParams){
 	var root = $scope.$root;
 
 	/**
-	 * timeout promise function
-	 * @type {Promise}
+	 * add focus for input
 	 */
-	var promise = $timeout(function(){
-		if($('input').get(0))
-			$('input').get(0).focus();
-	},500);
+	root.addFocusInScope($scope);
 
 	/**
-	 * cancel promise on destroy
+	 * setup month and day if are valid
 	 */
-    $scope.$on("$destroy", function() {
-    	if(promise)
-			$timeout.cancel(promise);
-    });
-
-	/**
-	 * setup month and day
-	 * @type {string}
-	 */
-	$scope.month = $routeParams.month ? Number($routeParams.month): null;
-	$scope.day   = $routeParams.day   ? Number($routeParams.day)  : null;
+	if(root.validateParams()){
+		$scope.month = Number($routeParams.month);
+		$scope.day   = Number($routeParams.day);
+	}
 
 	/**
 	 * activate back navigation only works in mobile
